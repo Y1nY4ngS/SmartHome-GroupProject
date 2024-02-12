@@ -8,7 +8,7 @@ namespace SmartHomeProject
 {
     internal class Stove
     {
-        enum Stove
+        private enum Stove
         {
             On,
             Off,

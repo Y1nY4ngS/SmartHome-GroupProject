@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal abstract class RoomDoctorate
+    internal abstract class RoomDecorator
     {
         protected IRoom Room;
         public string Name { get; set; }

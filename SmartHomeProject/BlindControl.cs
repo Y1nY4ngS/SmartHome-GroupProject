@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal class Bedroom
+    internal class BlindControl
     {
-        public DateTime AlarmClock;
     }
 }

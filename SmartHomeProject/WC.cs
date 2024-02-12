@@ -8,9 +8,6 @@ namespace SmartHomeProject
 {
     public class WC
     {
-        public double Humidity()
-        {
-
-        }
+        public double Humidity;
     }
 }

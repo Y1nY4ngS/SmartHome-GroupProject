@@ -8,9 +8,6 @@ namespace SmartHomeProject
 {
     internal class Wintergarden
     {
-        public double SolarIrridation()
-        {
-            return 
-        }
+        public double SolarIrridation;
     }
 }
