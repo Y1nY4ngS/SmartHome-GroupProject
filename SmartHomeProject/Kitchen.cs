@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal class Kitchen
+    internal class Kitchen : Room
     {
     }
 }

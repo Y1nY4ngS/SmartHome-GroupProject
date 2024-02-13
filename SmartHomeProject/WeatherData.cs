@@ -8,5 +8,8 @@ namespace SmartHomeProject
 {
     internal class WeatherData
     {
+        public double OutsideTemp;
+        public bool Rain;
+        public double WindSpeed;
     }
 }

@@ -8,6 +8,14 @@ namespace SmartHomeProject
 {
     internal class WeatherSensor
     {
-        private dobule 
+        private double ActualTemp;
+        private Random Random;
+        private const int MaxTemp;
+        private const int MinTemp;
+
+        public WeatherData GetWeatherdata()
+        {
+            return new WeatherData();
+        }
     }
 }

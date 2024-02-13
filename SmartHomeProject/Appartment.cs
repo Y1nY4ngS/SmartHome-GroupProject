@@ -8,5 +8,19 @@ namespace SmartHomeProject
 {
     internal class Appartment
     {
+        public void GenerateWeatherData()
+        {
+
+        }
+
+        public void SetPersonInRoom(bool PersonInRoom)
+        {
+
+        }
+
+        public void SetTempSpecification(double TempSpecification)
+        {
+
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    public class WC
+    private class WC : Room
     {
         public double Humidity;
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal class Bedroom
+    internal class Bedroom : Room
     {
         public DateTime AlarmClock;
     }

@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal class AwningControl
+    internal class AwningControl : RoomDecorator
     {
+        private bool HeaterOn;
+
+        public void TempProcess()
+        {
+
+        }
     }
 }

@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal class BlindControl
+    internal class BlindControl : RoomDecorator
     {
+        private bool HeaterOn;
+
+        public void TempProcess()
+        {
+
+        }
     }
 }

@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal class Heater
+    internal class Heater : RoomDecorator
     {
+        private bool HeaterOn;
+
+        public void TempProcess()
+        {
+
+        }
     }
 }

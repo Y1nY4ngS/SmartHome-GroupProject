@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal class Wintergarden
+    internal class Wintergarden : Room
     {
         public double SolarIrridation;
     }
