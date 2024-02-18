@@ -8,7 +8,12 @@ namespace SmartHomeProject
 {
     internal class Heater : RoomDecorator
     {
-        private bool HeaterOn;
+        private bool HeatingValve;
+
+        public override void HeaterOn()
+        {
+            HeatingValve = true;
+        }
 
         public void TempProcess()
         {

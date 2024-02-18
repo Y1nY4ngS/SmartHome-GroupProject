@@ -14,9 +14,28 @@ namespace SmartHomeProject
 
         public double TempSet { get; set; }
 
-        public void TempProcess()
+        public void TempProcess(WeatherData weatherData)
         {
+            if (weatherData.OutsideTemp < TempSet)
+            {
+                HeaterOn();
+            }
+            else if (weatherData.OutsideTemp > TempSet)
+            {
+                if (weatherData.WindSpeed <= 30)
+                {
+                    ExtendAwning();
+                }
 
+                if (!PersonInRoom)
+                {
+                    LowerBlinds();
+                }
+            }
         }
+
+        public virtual void HeaterOn() { }
+        public virtual void ExtendAwning() { }
+        public virtual void LowerBlinds() { }
     }
 }

@@ -8,7 +8,11 @@ namespace SmartHomeProject
 {
     internal class BlindControl : RoomDecorator
     {
-        private bool HeaterOn;
+        private bool Blinds;
+
+        public override void LowerBlinds(){
+        Blinds = true;
+        }
 
         public void TempProcess()
         {

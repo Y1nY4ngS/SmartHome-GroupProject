@@ -8,7 +8,12 @@ namespace SmartHomeProject
 {
     internal class AwningControl : RoomDecorator
     {
-        private bool HeaterOn;
+        private bool Awning;
+
+        public override void ExtendAwning()
+        {
+            Awning = true;
+        }
 
         public void TempProcess()
         {
