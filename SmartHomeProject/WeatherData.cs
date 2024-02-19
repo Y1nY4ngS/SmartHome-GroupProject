@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal class WeatherData
+    internal struct WeatherData
     {
-        public double OutsideTemp;
-        public bool Rain;
-        public double WindSpeed;
+        double OutsideTemp;
+        bool Rain;
+        double WindSpeed;
+
+        //Instead of using public class, use a struct. With that all data is public by default. 
     }
 }

@@ -8,20 +8,19 @@ namespace SmartHomeProject
 {
     internal class Kitchen : Room
     {
-        Appartment appartment = new Appartment();
+        Appartment appartment = new Appartment()
 
-        public new string Name = "Kitchen";
+        public bool PersonInRoom = appartment.SetPersonInRoom();
 
-        public new bool PersonInRoom = appartment.SetPersonInRoom();
+        public double TempSet = 22.8;
 
-        public new double TempSet = 22.8;
-
-        public new void TempProcess(WeatherData weatherData)
+        public void TempProcess(WeatherData weatherData)
         {
             Heater heater = new Heater();
             AwningControl awningControl = new AwningControl();
             BlindControl blindControl = new BlindControl();
 
+            Name = "Kitchen";
 
             if (weatherData.OutsideTemp < TempSet)
             {
@@ -42,3 +41,5 @@ namespace SmartHomeProject
         }
     }
 }
+
+// Take data from Room, not create new one in Kitchen.
