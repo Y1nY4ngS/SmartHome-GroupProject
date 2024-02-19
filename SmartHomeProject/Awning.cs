@@ -15,9 +15,9 @@ namespace SmartHomeProject
             Awning = true;
         }
 
-        public void TempProcess()
+        public override void ProcessWeatherData()
         {
-
+            
         }
     }
 }

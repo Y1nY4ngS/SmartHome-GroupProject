@@ -17,7 +17,7 @@ namespace SmartHomeProject
 
         public void GenerateWeatherData()
         {
-            WeatherData weatherdata = weatherSensor.GetWeatherdata();
+            WeatherData weatherdata = weatherSensor.GetWeatherData();
 
             weatherdata.OutsideTemp = 22;
             weatherdata.Rain = true;

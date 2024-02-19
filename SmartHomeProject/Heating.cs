@@ -6,18 +6,31 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal class Heating : RoomDecorator
+    public class Heating : RoomDecorator
     {
-        private bool HeatingValve;
+        private bool heatingValveOpen;
 
-        public override void HeatingOn()
+        public HeatingValve(IRoom room) : base(room) { }
+
+        public override void ProcessWeatherData(WeatherData weatherData)
         {
-            HeatingValve = true;
-        }
-
-        public void TempProcess()
-        {
-
+            base.ProcessWeatherData(weatherData);
+            if (weatherData.OutsideTemp < TempSet)
+            {
+                if (!heatingValveOpen)
+                {
+                    Console.WriteLine("Opening Heating Valve.");
+                    heatingValveOpen = true;
+                }
+            }
+            else
+            {
+                if (heatingValveOpen)
+                {
+                    Console.WriteLine("Closing Heating Valve.");
+                    heatingValveOpen = false;
+                }
+            }
         }
     }
 }

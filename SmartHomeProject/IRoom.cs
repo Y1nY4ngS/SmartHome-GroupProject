@@ -12,9 +12,6 @@ namespace SmartHomeProject
         public bool PersonInRoom { get; set; }
         public double TempSet { get; set; }
 
-        public void TempProcess()
-        {
-
-        }
+        public void ProcessWeatherData(WeatherData weatherdata);
     }
 }

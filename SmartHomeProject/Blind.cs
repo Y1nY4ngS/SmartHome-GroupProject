@@ -14,7 +14,7 @@ namespace SmartHomeProject
         Blind = true;
         }
 
-        public void TempProcess()
+        public void ProcessWeatherData()
         {
 
         }

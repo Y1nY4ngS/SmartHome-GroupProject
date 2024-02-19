@@ -6,23 +6,27 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal abstract class RoomDecorator
-        private IRoom room;
+    public abstract class RoomDecorator : IRoom
     {
-        protected IRoom Room;
+        protected IRoom room;
+
+        public RoomDecorator(IRoom room)
+        {
+            this.room = room;
+            this.Name = room.Name;
+        }
+
         public string Name { get; set; }
         public bool PersonInRoom { get; set; }
         public double TempSet { get; set; }
-        public void TempProcess(WeatherData weatherData)
+
+        public virtual void ProcessWeatherData(WeatherData weatherData)
         {
-            
+            room.TempSet = TempSet;
+            room.PersonInRoom = PersonInRoom;
+            room.ProcessWeatherData(weatherData);
         }
-        public virtual void HeaterOn() { }
-        public virtual void ExtendAwning() { }
-        public virtual void LowerBlinds() { }
+
     }
-}
-public RoomDecorator(IRoom ProcessWeather())
-{
-    this.wetterProcessor = wetterProcessor;
+
 }

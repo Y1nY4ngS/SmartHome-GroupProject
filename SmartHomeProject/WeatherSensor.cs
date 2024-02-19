@@ -13,7 +13,7 @@ namespace SmartHomeProject
         private const int maxTemp = 30;
         private const int minTemp = -10;
 
-        public WeatherData GetWeatherdata()
+        public WeatherData GetWeatherData()
         {
             WeatherData weatherdata = new WeatherData();
 

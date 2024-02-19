@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal class Room: IRoom
+    internal class Room : IRoom
     {
         public string Name { get; set; }
 
@@ -14,7 +14,7 @@ namespace SmartHomeProject
 
         public double TempSet { get; set; }
 
-        public void TempProcess(WeatherData weatherData)
+        public void ProcessWeatherData(WeatherData weatherData)
         {
             if (weatherData.OutsideTemp < TempSet)
             {
