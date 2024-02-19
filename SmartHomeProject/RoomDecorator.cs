@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace SmartHomeProject
 {
     internal abstract class RoomDecorator
+        private IRoom room;
     {
         protected IRoom Room;
         public string Name { get; set; }
@@ -20,4 +21,8 @@ namespace SmartHomeProject
         public virtual void ExtendAwning() { }
         public virtual void LowerBlinds() { }
     }
+}
+public WeatherDecorator(IProcessWeather wetterProcessor)
+{
+    this.wetterProcessor = wetterProcessor;
 }
