@@ -10,11 +10,6 @@ namespace SmartHomeProject
     {
         private bool Awning;
 
-        public override void ExtendAwning()
-        {
-            Awning = true;
-        }
-
         public override void ProcessWeatherData()
         {
             

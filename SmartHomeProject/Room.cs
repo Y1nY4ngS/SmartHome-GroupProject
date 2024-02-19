@@ -16,22 +16,7 @@ namespace SmartHomeProject
 
         public void ProcessWeatherData(WeatherData weatherData)
         {
-            if (weatherData.OutsideTemp < TempSet)
-            {
-                HeaterOn();
-            }
-            else if (weatherData.OutsideTemp > TempSet)
-            {
-                if (weatherData.WindSpeed <= 30)
-                {
-                    ExtendAwning();
-                }
 
-                if (!PersonInRoom)
-                {
-                    LowerBlinds();
-                }
-            }
         }
 
         public virtual void HeaterOn() { }

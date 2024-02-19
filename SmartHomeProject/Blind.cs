@@ -10,10 +10,6 @@ namespace SmartHomeProject
     {
         private bool Blind;
 
-        public override void LowerBlinds(){
-        Blind = true;
-        }
-
         public void ProcessWeatherData()
         {
 
