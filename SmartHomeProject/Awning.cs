@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal class BlindControl : RoomDecorator
+    internal class Awning : RoomDecorator
     {
-        private bool Blinds;
+        private bool Awning;
 
-        public override void LowerBlinds(){
-        Blinds = true;
+        public override void ExtendAwning()
+        {
+            Awning = true;
         }
 
         public void TempProcess()

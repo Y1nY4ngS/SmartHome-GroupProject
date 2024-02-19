@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal class Heater : RoomDecorator
+    internal class Heating : RoomDecorator
     {
         private bool HeatingValve;
 
-        public override void HeaterOn()
+        public override void HeatingOn()
         {
             HeatingValve = true;
         }
