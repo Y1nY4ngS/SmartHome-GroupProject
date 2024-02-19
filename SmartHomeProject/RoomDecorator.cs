@@ -22,7 +22,7 @@ namespace SmartHomeProject
         public virtual void LowerBlinds() { }
     }
 }
-public WeatherDecorator(IProcessWeather wetterProcessor)
+public RoomDecorator(IRoom ProcessWeather())
 {
     this.wetterProcessor = wetterProcessor;
 }
