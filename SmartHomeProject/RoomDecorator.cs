@@ -26,7 +26,6 @@ namespace SmartHomeProject
             room.PersonInRoom = PersonInRoom;
             room.ProcessWeatherData(weatherData);
         }
-
     }
 
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal interface IRoom
+    public interface IRoom
     {
         public string Name { get; set; }
         public bool PersonInRoom { get; set; }

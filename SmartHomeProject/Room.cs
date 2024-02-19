@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal class Room : IRoom
+    public class Room : IRoom
     {
         public string Name { get; set; }
 
