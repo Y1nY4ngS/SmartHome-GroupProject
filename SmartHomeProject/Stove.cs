@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal class Stove
+    public class Stove
     {
         private enum Stove
         {

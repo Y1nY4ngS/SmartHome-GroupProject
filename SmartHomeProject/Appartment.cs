@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal class Appartment
+    public class Appartment
     {
         private WeatherSensor weatherSensor;
 
