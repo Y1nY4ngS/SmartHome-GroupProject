@@ -6,30 +6,10 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal class Wintergarden : Room
+    public class Wintergarden : Room
     {
-        public double SolarIrridation;
+        public double SunShinning { get; set; }
 
-        public new string Name = "Wintergarden";
-
-        public new void TempProcess(WeatherData weatherData)
-        {
-            Heater heater = new Heater();
-            AwningControl awningControl = new AwningControl();
-            BlindControl blindControl = new BlindControl();
-
-            if (weatherData.OutsideTemp > TempSet)
-            {
-                if (weatherData.WindSpeed <= 30)
-                {
-                    awningControl.ExtendAwning();
-                }
-
-                if (!PersonInRoom)
-                {
-                    blindControl.LowerBlinds();
-                }
-            }
-        }
+        public Wintergarden() : base("Wintergarden") { }
     }
 }

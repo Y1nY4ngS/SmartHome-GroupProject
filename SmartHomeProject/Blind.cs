@@ -6,13 +6,36 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal class Blind : RoomDecorator
+    public class Blind : RoomDecorator
     {
-        private bool Blind;
+        private bool BlindOpen;
 
-        public void ProcessWeatherData()
+        public Blind(IRoom room) : base(room) { }
+
+        public override void ProcessWeatherData(WeatherData weatherData)
         {
-
+            base.ProcessWeatherData(weatherData);
+            if(weatherData.OutsideTemp > TempSet)
+            {
+                if(BlindOpen)
+                {
+                    if(PersonInRoom)
+                    {
+                        Console.WriteLine("Blinds can't extend because trrhere are people in room");
+                    } else
+                    {
+                        Console.WriteLine("Blinds are clossing");
+                        BlindOpen = false;
+                    }
+                }
+            } else
+            {
+                if (!BlindOpen)
+                {
+                    Console.WriteLine("Blinds are opening");
+                    BlindOpen = true;
+                }
+            }
         }
     }
 }

@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    public class Stove
+    public enum Stove
     {
-        private enum Stove
-        {
-            On,
-            Off,
-            OffButHot
-        }
+        On,
+        Off,
+        OffButHot
     }
 }

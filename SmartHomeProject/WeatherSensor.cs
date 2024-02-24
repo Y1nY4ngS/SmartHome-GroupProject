@@ -6,18 +6,35 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal class WeatherSensor
+    public class Weathersensor
     {
-        private double ActualTemp = 22;
-        private Random Random;
-        private const int maxTemp = 30;
-        private const int minTemp = -10;
+        private double currentTemp;
+        private Random random;
+        private const int maxTemp = 35;
+        private const int minTemp = -15;
 
+        public Weathersensor()
+        {
+            this.random = new Random(Guid.NewGuid().GetHashCode());
+            this.currentTemp = random.Next(minTemp, maxTemp);
+        }
         public WeatherData GetWeatherData()
         {
-            WeatherData weatherdata = new WeatherData();
+            var rand = this.random.NextDouble();
 
-            return weatherdata;
+            var rain = rand > 0.5;
+
+            var deltaTemp = rand * (rain ? -1 : 1);
+            var newTemp = this.currentTemp + deltaTemp;
+            if(newTemp < minTemp || newTemp > maxTemp)
+            {
+                deltaTemp *= -1;
+            }
+            this.currentTemp += deltaTemp;
+            this.currentTemp = Math.Round(this.currentTemp, 1);
+            var wind = Math.Round(35d * rand, 1);
+
+            return new WeatherData { OutsideTemp = this.currentTemp, WindSpeed = wind, Rain = rain };
         }
     }
 }

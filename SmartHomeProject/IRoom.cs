@@ -8,10 +8,10 @@ namespace SmartHomeProject
 {
     public interface IRoom
     {
-        public string Name { get; set; }
-        public bool PersonInRoom { get; set; }
-        public double TempSet { get; set; }
+        string Name { get; set; }
+        bool PersonInRoom { get; set; }
+        double TempSet { get; set; }
 
-        public void ProcessWeatherData(WeatherData weatherdata);
+        void ProcessWeatherData(WeatherData weatherdata);
     }
 }

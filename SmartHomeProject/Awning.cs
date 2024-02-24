@@ -6,13 +6,40 @@ using System.Threading.Tasks;
 
 namespace SmartHomeProject
 {
-    internal class Awning : RoomDecorator
+    public class Awning : RoomDecorator
     {
-        private bool Awning;
+        private bool AwningIn;
 
-        public override void ProcessWeatherData()
+        public Awning(IRoom room) : base(room) { }
+
+        public override void ProcessWeatherData(WeatherData weatherdata)
         {
-            
+            base.ProcessWeatherData(weatherdata);
+            if(weatherdata.OutsideTemp > TempSet)
+            {
+                if (AwningIn)
+                {
+                    if (weatherdata.Rain)
+                    {
+                        Console.WriteLine("Awning can't be extended");
+                    } else
+                    {
+                        Console.WriteLine("Awning is extending");
+                        AwningIn = false;
+                    }
+                } else if(weatherdata.Rain && !AwningIn) 
+                {
+                    Console.WriteLine("Awning is retracting because of rain");
+                    AwningIn = true;
+                }
+            } else
+            {
+                if(!AwningIn)
+                {
+                    Console.WriteLine("Awning is retracting");
+                    AwningIn=true;
+                }
+            }
         }
     }
 }

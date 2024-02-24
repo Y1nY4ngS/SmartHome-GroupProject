@@ -8,9 +8,9 @@ namespace SmartHomeProject
 {
     public struct WeatherData
     {
-        double OutsideTemp; {  get; set; }
-        bool Rain; {  get; set; }
-        double WindSpeed; { get; set; }
+        public double OutsideTemp {  get; set; }
+        public bool Rain {  get; set; }
+        public double WindSpeed { get; set; }
 
         //Instead of using public class, use a struct. With that all data is public by default. 
     }
