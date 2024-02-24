@@ -34,7 +34,7 @@ namespace SmartHomeProject
             this.currentTemp = Math.Round(this.currentTemp, 1);
             var wind = Math.Round(35d * rand, 1);
 
-            return new WeatherData { OutsideTemp = this.currentTemp, WindSpeed = wind, Rain = rain };
+            return new WeatherData{ OutsideTemp = this.currentTemp, WindSpeed = wind, Rain = rain };
         }
     }
 }
