@@ -11,27 +11,30 @@ namespace SmartHomeProject.Tests
     [TestClass()]
     public class ApartmentTests
     {
-        private WeatherDataMock sensor;
+        private WeatherDataMock weatherdatamock;
+        private Apartment apartment;
         [TestMethod()]
         public void HeaterTest()
         {
-            sensor.GetWeatherDataMock(20, false, 21);
-            apartment = new Apartment(sensor);
+            weatherdatamock.GetWeatherDataMock(20, false, 21);
 
             // Arrange
-            Apartment.SetTempSet("Living room", 19);
-            sensor.GetWeatherDataMock(18, false, 0);
+            apartment.SetTempSet("Living room", 19);
+            weatherdatamock.GetWeatherDataMock(18, false, 0);
 
             // Act
-            apartment.ProcessWeatherData();
+            apartment.GenerateWeatherData();
 
             // Assert
             Assert.IsTrue(apartment.IsHeaterOn("Living room"));
+
         }
         [TestMethod()]
         public void SetTempSetTest()
         {
-            Assert.Fail();
+            string roomName = "Living room";
+            int targetTemperature = 21;
+            Assert.AreEqual(targetTemperature, apartment.GetTempSet(roomName);
         }
 
         [TestMethod()]
