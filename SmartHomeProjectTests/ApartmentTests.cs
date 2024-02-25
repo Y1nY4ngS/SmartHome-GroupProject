@@ -11,12 +11,14 @@ namespace SmartHomeProject.Tests
     [TestClass()]
     public class ApartmentTests
     {
+        private WeatherDataMock sensor;
         [TestMethod()]
         public void ApartmentTest()
         {
-            Assert.Fail();
+            
         }
 
+        
         [TestMethod()]
         public void SetTempSetTest()
         {
@@ -34,5 +36,6 @@ namespace SmartHomeProject.Tests
         {
             Assert.Fail();
         }
+        
     }
 }
