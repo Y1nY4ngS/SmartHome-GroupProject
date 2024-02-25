@@ -13,10 +13,20 @@ namespace SmartHomeProject.Tests
     {
         private WeatherDataMock sensor;
         [TestMethod()]
-        public void HeaterTest() 
+        public void HeaterTest()
         {
             sensor.GetWeatherDataMock(20, false, 21);
+            apartment = new Apartment(sensor);
 
+            // Arrange
+            Apartment.SetTempSet("Living room", 19);
+            sensor.GetWeatherDataMock(18, false, 0);
+
+            // Act
+            apartment.ProcessWeatherData();
+
+            // Assert
+            Assert.IsTrue(apartment.IsHeaterOn("Living room"));
         }
         [TestMethod()]
         public void SetTempSetTest()
@@ -35,6 +45,6 @@ namespace SmartHomeProject.Tests
         {
             Assert.Fail();
         }
-        
+
     }
 }
