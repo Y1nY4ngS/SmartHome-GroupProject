@@ -13,12 +13,11 @@ namespace SmartHomeProject.Tests
     {
         private WeatherDataMock sensor;
         [TestMethod()]
-        public void ApartmentTest()
+        public void HeaterTest() 
         {
-            
-        }
+            sensor.GetWeatherDataMock(20, false, 21);
 
-        
+        }
         [TestMethod()]
         public void SetTempSetTest()
         {
