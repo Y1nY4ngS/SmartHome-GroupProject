@@ -26,7 +26,7 @@ namespace SmartHomeProject.Tests
             apartment.GenerateWeatherData();
 
             // Assert
-            Assert.IsTrue(apartment.IsHeaterOn("Living room"));
+            Assert.IsTrue(apartment.heaterOn("Living room"));
 
         }
         [TestMethod()]
@@ -47,6 +47,20 @@ namespace SmartHomeProject.Tests
         public void GenerateWeatherDataTest()
         {
             Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void HeaterTest_HeaterDoesNotTurnOnWhenAboveSetTemp()
+        {
+            // Arrange
+            apartment.SetTempSet("Living room", 25);
+            sensor.GetWeatherDataMock(26, false, 0);
+
+            // Act
+            apartment.GenerateWeatherData();
+
+            // Assert
+            Assert.IsFalse(apartment.IsHeaterOn("Living room"));
         }
 
     }
