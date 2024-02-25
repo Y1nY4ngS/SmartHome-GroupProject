@@ -25,13 +25,16 @@
         public void HeaterTest()
         {
             // Arrange
-            double mockTemp = 10; 
-            bool mockRain = false; 
-            double mockWind = 5; 
+            double mockTemp = 10; // Set the mock temperature
+            bool mockRain = false; // Set the mock rain status
+            double mockWind = 5; // Set the mock wind speed
             WeatherData mockWeatherData = weatherDataMock.GetWeatherDataMock(mockTemp, mockRain, mockWind);
 
             // Act
             apartment.GenerateWeatherData();
+
+            // Assert
+            // Add your assertions here based on the expected behavior of the heater
         }
     }
 }
