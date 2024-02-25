@@ -13,7 +13,7 @@ namespace SmartHomeProject
         private const int maxTemp = 35;
         private const int minTemp = -15;
 
-        public Weathersensor()
+        public Weathersensor(WeatherDataMock weatherDataMock)
         {
             this.random = new Random(Guid.NewGuid().GetHashCode());
             this.currentTemp = random.Next(minTemp, maxTemp);
