@@ -41,5 +41,17 @@
             int targetTemperature = 21;
             Assert.AreEqual(targetTemperature, apartment.GetTempSet(roomName);
         }
+
+        public void HeaterTest2()
+        {
+            double mockTemp = 15;
+            bool mockRain = true;
+            double mockWind = 1.3;
+            WeatherData mockWeatherData = weatherDataMock.GetWeatherDataMock(mockTemp, mockRain, mockWind);
+
+            apartment.GenerateWeatherData();
+
+            Assert.IsTrue(HeatingOn);
+        }
     }
 }
