@@ -52,6 +52,18 @@
             apartment.GenerateWeatherData();
 
             Assert.IsTrue(HeatingOn);
+
+            var kitchen = apartment.GetRoom<Heater>("Kitchen");
+            Assert.IsTrue(kitchen.HeatingOn, "Heating should be turned on.");
+        }
+
+        public T GetZimmer<T>() where T : RoomDecorator
+        {
+            if(this is T)
+            {
+                return this as T;
+            }
+            if(this.room is RoomDecorator) { }
         }
     }
 }
