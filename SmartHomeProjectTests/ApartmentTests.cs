@@ -33,5 +33,13 @@
 
             Assert.IsTrue(HeatingOn);
         }
+
+        [TestMethod()]
+        public void SetTempSetTest()
+        {
+            string roomName = "Living room";
+            int targetTemperature = 21;
+            Assert.AreEqual(targetTemperature, apartment.GetTempSet(roomName);
+        }
     }
 }
