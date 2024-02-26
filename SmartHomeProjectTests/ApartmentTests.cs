@@ -30,6 +30,8 @@
             WeatherData mockWeatherData = weatherDataMock.GetWeatherDataMock(mockTemp, mockRain, mockWind);
 
             apartment.GenerateWeatherData();
+
+            Assert.IsTrue(HeatingOn);
         }
     }
 }
